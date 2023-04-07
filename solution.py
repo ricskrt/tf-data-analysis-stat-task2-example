@@ -13,5 +13,5 @@ def solution(p: float, x: np.array) -> tuple:
     alpha = 1 - p
     x = x**2
     sn = sum(x)
-    return sn/(29**0.5*chi2.ppf((1 - alpha / 2), df=2*len(x))), \
-           sn/(29**0.5* chi2.ppf(alpha / 2,df=2*len(x)))
+    return (sn/(29*chi2.ppf((1 - alpha / 2), df=2*len(x))))**0.5, \
+           (sn/(29*chi2.ppf(alpha / 2,df=2*len(x))))**0.5
